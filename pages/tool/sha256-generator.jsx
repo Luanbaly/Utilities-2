@@ -1,19 +1,19 @@
+import { sha256 } from 'crypto-hash';
 import React, { useState } from 'react'
 
-function md5() {
-    const [algorithms] = useState(['md5']);
-    const md5 = require('md5');
+function Sha256() {
+    const [algorithms] = useState(['sha256']);
 
     let [text_input, setTextInput] = useState('');
-    let [algorithm, setAlgorithm] = useState('md5');
+    let [algorithm, setAlgorithm] = useState('sha256');
     let [output, setOutput] = useState('');
     const handleTextInput = async (e) => {
         let value = e.target.value;
 
         let result = '';
 
-        if (algorithm == 'md5') {
-            result = await md5(value);
+        if (algorithm == 'sha256') {
+            result = await sha256(value);
         }
         setOutput(result);
         setTextInput(value);
@@ -27,8 +27,8 @@ function md5() {
 
         if (text_input) {
 
-            if (value == 'md5') {
-                result = await md5(text_input);
+            if (value == 'sha256') {
+                result = await sha256(text_input);
             }
         }
         setAlgorithm(value);
@@ -37,7 +37,7 @@ function md5() {
   return (
     <form className="space-y-4 py-5 pl-4">
         <h2 className="text-xl font-bold">
-            MD5 Hash Generator
+        Sha256 Hash Generator
         </h2>
           <div className="mb-15 mt-20">
             <textarea
@@ -80,4 +80,4 @@ function md5() {
   )
 }
 
-export default md5
+export default Sha256

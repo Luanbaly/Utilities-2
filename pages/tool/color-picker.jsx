@@ -8,9 +8,6 @@ import { SketchPicker, SliderPicker } from 'react-color';
       g: '16',
       b: '254',
       a: '1',
-      h: '271',
-      l: '99',
-      s: '53',
     },
   };
 
@@ -42,7 +39,7 @@ import { SketchPicker, SliderPicker } from 'react-color';
         </span>
             <p 
             className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-            {this.state.color.r}, {this.state.color.g}, {this.state.color.b}, {this.state.color.a} 
+             
         </p>
         </div>
         <div className="pt-5 w-full" >
@@ -63,7 +60,6 @@ import { SketchPicker, SliderPicker } from 'react-color';
         </span>
             <p 
             className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-            {this.state.color.r}, {this.state.color.g}, {this.state.color.b}, {this.state.color.a} 
         </p>
         </div>
         </div>
@@ -74,7 +70,6 @@ import { SketchPicker, SliderPicker } from 'react-color';
         </span>
             <p 
             className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-            {this.state.color.r}, {this.state.color.g}, {this.state.color.b}, {this.state.color.a} 
             </p>
                 </div>
                     </div>

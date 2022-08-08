@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 
-function App() {
+function image() {
   const [viewImage, setViewImage] = useState("");
   
 
   const handleFileChange = (e) => {
-    console.log(URL.createObjectURL(e.target.files[0]))
+    // console.log(URL.createObjectURL(e.target.files[0]))
     if (e.target.files.length <= 0) return;
     var reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onloadend = function () {
       var base64data = reader.result;
-      console.log(base64data);
       setViewImage(base64data)
     }
   }
@@ -44,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default image;

@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import { MdContentCopy, MdCheck } from 'react-icons/md';
+import useClipboard from "../../components/hooks/useClipboard";
 
 // Utility functions
 import { generatePassword } from "../../components/utils/form.utils";
@@ -10,10 +12,12 @@ export default function Password() {
   const symbolsRef = useRef();
   const lengthRef = useRef();
   const [value, setValue] = useState("20");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("qlazasomheagsavvfdte");
   const md5 = require('md5');
   const sha256 = require('sha256');
   // console.log(md5('12321'));
+  const [isCopied, copy] = useClipboard();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,7 +35,7 @@ export default function Password() {
     return (
       <form className="space-y-4 py-5 pl-4" onSubmit={handleSubmit}>
       <h2 className="text-xl font-bold">Password Random Generator</h2>
-      <div className="">
+      <div>
         <select 
             value={value}
             onChange={(e) => {
@@ -138,25 +142,49 @@ export default function Password() {
       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-700 sm:text-sm">
       Result:
         </span>
-      <h4 className="flex-1 border rounded-none rounded-r-md border-gray-300 pt-1 pb-1 pl-2">{password}</h4>
+      <h4 className="flex-1 border rounded-none border-gray-300 pt-1 pb-1 pl-2">{password}</h4>
+      <button
+        type="button"
+        onClick={() => copy(password)}
+        className="relative -ml-px inline-flex items-center space-x-2 rounded-r-md bg-indigo-500 px-4 py-2 text-sm font-medium text-gray-100 transition hover:bg-indigo-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        {isCopied ? <MdCheck className="h-5 w-5"></MdCheck> : <MdContentCopy className="h-5 w-5"></MdContentCopy>}
+    </button>
       </div>
       <div className="flex" >
       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-700 sm:text-sm">
       MD5:
         </span>
-      <h4 className="flex-1 border rounded-none rounded-r-md border-gray-300 pt-1 pb-1 pl-2">{(md5(password))}</h4>
+      <h4 className="flex-1 border rounded-none border-gray-300 pt-1 pb-1 pl-2">{(md5(password))}</h4>
+      <button
+        type="button"
+        onClick={() => copy(md5(password))}
+        className="relative -ml-px inline-flex items-center space-x-2 rounded-r-md bg-indigo-500 px-4 py-2 text-sm font-medium text-gray-100 transition hover:bg-indigo-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        {isCopied ? <MdCheck className="h-5 w-5"></MdCheck> : <MdContentCopy className="h-5 w-5"></MdContentCopy>}
+    </button>
       </div>
       <div className="flex" >
       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-700 sm:text-sm">
       SHA256:
         </span>
-      <h4 className="flex-1 border rounded-none rounded-r-md border-gray-300 pt-1 pb-1 pl-2">{(sha256(password))}</h4>
+      <h4 className="flex-1 border rounded-none border-gray-300 pt-1 pb-1 pl-2">{(sha256(password))}</h4>
+      <button
+        type="button"
+        onClick={() => copy(sha256(password))}
+        className="relative -ml-px inline-flex items-center space-x-2 rounded-r-md bg-indigo-500 px-4 py-2 text-sm font-medium text-gray-100 transition hover:bg-indigo-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        {isCopied ? <MdCheck className="h-5 w-5"></MdCheck> : <MdContentCopy className="h-5 w-5"></MdContentCopy>}
+    </button>
       </div>
       <div className="flex" >
       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-700 sm:text-sm">
       2xSHA256:
         </span>
-      <h4 className="flex-1 border rounded-none rounded-r-md border-gray-300 pt-1 pb-1 pl-2">{(sha256.x2(password))}</h4>
+      <h4 className="flex-1 border rounded-none border-gray-300 pt-1 pb-1 pl-2">{(sha256.x2(password))}</h4>
+      <button
+        type="button"
+        onClick={() => copy(sha256.x2(password))}
+        className="relative -ml-px inline-flex items-center space-x-2 rounded-r-md bg-indigo-500 px-4 py-2 text-sm font-medium text-gray-100 transition hover:bg-indigo-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        {isCopied ? <MdCheck className="h-5 w-5"></MdCheck> : <MdContentCopy className="h-5 w-5"></MdContentCopy>}
+    </button>
       </div>
     </form>
     );

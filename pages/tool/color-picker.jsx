@@ -33,46 +33,17 @@ import { SketchPicker, SliderPicker } from 'react-color';
           </div>
           </div>
         <div className="flex-initial w-full" >
-            <div className='flex pl-10'>
-       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-200 text-gray-500 sm:text-sm">
-       Hex:
-        </span>
-            <p 
-            className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-             
-        </p>
-        </div>
         <div className="pt-5 w-full" >
             <div className='flex pl-10'>
        <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-200 text-gray-500 sm:text-sm">
        RGBA:
         </span>
             <p 
-            className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
+            className="flex-1 border rounded-none border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
             {this.state.color.r}, {this.state.color.g}, {this.state.color.b}, {this.state.color.a} 
-        </p>
-        </div>
-        </div>
-        <div className="pt-5 w-full" >
-            <div className='flex pl-10'>
-       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-200 text-gray-500 sm:text-sm">
-       HSL:
-        </span>
-            <p 
-            className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-        </p>
-        </div>
-        </div>
-        <div className="pt-5 w-full" >
-            <div className='flex pl-10'>
-       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-200 text-gray-500 sm:text-sm">
-       HSV:
-        </span>
-            <p 
-            className="flex-1 border rounded-none rounded-r-md border-gray-300 shadow pt-1 pb-1 pl-2 text-gray-500">
-            </p>
-                </div>
-                    </div>
+                      </p>
+                      </div>
+                      </div>
                     </div>
                     </div>
                     </div>
